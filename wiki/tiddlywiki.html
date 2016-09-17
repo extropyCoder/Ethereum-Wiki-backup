@@ -9624,59 +9624,98 @@ Use the constructor. Anything inside it will be executed when the contract is fi
 &quot;&quot;&quot;
 </pre>
 </div>
-<div created="20160824203724328" creator="ethereum" modified="20160825165743837" modifier="ethereum" title="Yellow Paper Summary" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&quot;&quot;&quot;
+<div created="20160824203724328" creator="ethereum" modified="20160916145253729" modifier="ethereum" title="Yellow Paper Summary" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!!Yellow Paper Summary
+!!! The astute reader will realise that this implies that no instruction can, through its execution, cause an exceptional halt.
 
-&lt;h3&gt; The astute reader will realise that this implies that no instruction can, through its execution, cause an exceptional halt.&lt;/h3&gt;
 
-The EVM is a simple stack-based architec-
-ture. The word size of the machine (and thus size of stack
-item) is 256-bit.
-The machine also has
-an independent storage model; this is similar in concept
-to the memory but rather than a byte array, it is a word-
-addressable word array. Unlike memory, which is volatile,
-storage is non volatile and is maintained as part of the
-system state.
+!!!Blocks State and Transactions
 
-Exceptions
+''World State'' 
+This is a mapping between addresses and account states. This is stored in a modified Merkle Patricia tree,  the state database, and requires a mapping between byte arrays. It is not stored on the blockchain.
+The account state has four fields
+
+*nonce - scalar value equal to the number of transactions sent from this account, denoted $$\sigma[a]_n$$
+*balance - scalar value equal to number of Wei owned by this address denoted $$\sigma[a]_n$$
+*storage root - a 256 bit hash of the root node of the Merkle Patricia tree that encodes the storage contents of the account. Denoted $$\sigma[a]_s$$
+*codehash - the hash of the EVM code of this account, this gets executed if this account receives a message call. Denoted $$\sigma[a]_c$$. The code may be denoted ''b'' given that KEC(''b'') = $$\sigma[a]_c$$
+
+If the code hash is the Keccak-256 hash of the empty string, 
+ $$\sigma[a]_c =  KEC(())$$ , then this is a simple non contract account. 
+
+!!Transaction
+2 types
+
+*those that result in message calls
+*contract creation - create new accounts and associated code
+
+Both have similar fields
+
+*nonce - scalar value equal to the number of transactions sent from this account, denoted $$T_n$$
+*gas price - scalar - the number of wei to be paid per unit of gas for all computation costs. denoted $$T_p$$
+*gas limit - scalar  - maximum amount of gas that should be used, paid up front, may not be increased later  denoted $$T_g$$
+*to - the 160 bit address of the call's recipient, or for a contract creation transaction 0. denoted $$T_t$$
+*value - scalar - the number of wei to be transferred to the recipient.  denoted $$T_v$$
+*v,r,s - values corresponding to the signature of the transaction used to deteremine the sender of the transaction - denoted $$T_w$$,$$T_r$$,$$T_s$$
+
+Additionally a contract creation transaction contains
+
+*init - an unlimited size byte array specifying the EVM code for the account initialisation procedure.This is executed at account creation time and discarded after.  denoted  $$T_i$$
+
+A message call transaction contains 
+
+*data - an unlimited size byte array specifying the input data of the transaction, denoted $$T_d$$
+
+
+!!Blocks
+later
+
+!!Gas and Payment
+
+Any given fragment of computation has an universally agreed cost in terms of gas.
+
+Every transaction has a specific amount of gas associated with it the ''gasLimit''. Any unused gas at the end of the transaction is refunded to the sender's account.
+Transactors are free to specify any gas price that they wish, however miners are free to ignore transactions as they choose.
+
+
+The EVM is a simple stack-based architecture. The word size of the machine (and thus size of stack item) is 256-bit.
+
+The machine also has an independent storage model; this is similar in concept to the memory but rather than a byte array, it is a word addressable word array. 
+
+Unlike memory, which is volatile, storage is non volatile and is maintained as part of the system state.
+
+!!!Exceptions
 
 Include
 Stack Underflow, Invalid instruction, Out of gas
 
-Execution Environment
+!!!Execution Environment
 
-Execution agent provides :
-• I a , the address of the account which owns the
-code that is executing.
-• I o , the sender address of the transaction that orig-
-inated this execution.
-• I p , the price of gas in the transaction that origi-
-nated this execution.
-• I d , the byte array that is the input data to this
-execution; if the execution agent is a transaction,
-this would be the transaction data.
-• I s , the address of the account which caused the
-code to be executing; if the execution agent is a
-transaction, this would be the transaction sender.
-• I v , the value, in Wei, passed to this account as
-part of the same procedure as execution; if the
-execution agent is a transaction, this would be
-the transaction value.
-• I b , the byte array that is the machine code to be
-executed.
-• I H , the block header of the present block.
-• I e , the depth of the present message-call or
-contract-creation (i.e. the number of CALL s or
-CREATE s being executed at present).
+The Execution agent provides :
+
+*$$I_a$$ , the address of the account which owns the code that is executing.
+*$$I_o$$ , the sender address of the transaction that originated this execution.
+*$$I_p$$ the price of gas in the transaction that originated this execution.
+*$$I_d$$ the byte array that is the input data to this execution; if the execution agent is a transaction, this would be the transaction data.
+*$$I_s$$ the address of the account which caused the code to be executing; if the execution agent is a transaction, this would be the transaction sender.
+*$$I_v$$ the value, in Wei, passed to this account as part of the same procedure as execution; if the execution agent is a transaction, this would be the transaction value.
+*$$I_b$$ the byte array that is the machine code to be executed.
+*$$I_H$$ the block header of the present block.
+*$$I_e$$ the depth of the present message-call or contract-creation (i.e. the number of CALL s or CREATE s being executed at present).
 
 
-The execution model defines the function Ξ, which can
-compute the resultant state σ , the remaining gas g , the
-suicide list s, the log series l, the refunds r and the resul-
-tant output, o, given these definitions:
-(115)
-(σ , g , s, l, r, o) ≡ Ξ(σ, g, I)
+The execution model defines the function Ξ , which can compute 
+
+*the resultant state σ
+*the remaining gas g
+*the suicide list s
+*the log series l
+*the refunds r
+*the resultant output, o, given these definitions
+
+$$(\sigma,g,s,l,r,o) \equiv$$ Ξ $$(\sigma,g,l)$$
+ 
+
 </pre>
 </div>
 <div created="20160807205040503" creator="ethereum" modified="20160824124314806" modifier="ethereum" title="Zero Cash" type="text/vnd.tiddlywiki" revision="0" bag="default">
