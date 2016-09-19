@@ -141,6 +141,12 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/showeditpreview</li>
+
+<li>$:/state/tab/moresidebar-401116514</li>
+
+<li>$:/state/tab/sidebar--1835078512</li>
+
 <li>$:/status/IsLoggedIn</li>
 
 <li>$:/status/UserName</li>
@@ -148,6 +154,8 @@ Error message and password prompt
 <li>$:/StoryList</li>
 
 <li>$:/temp/info-plugin</li>
+
+<li>$:/temp/search</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -8185,13 +8193,22 @@ Error message and password prompt
 <div created="20160209081622158" creator="ethereum" modified="20160825215556244" modifier="ethereum" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>Blockchain</pre>
 </div>
+<div created="20160919152505560" creator="ethereum" modified="20160919152512159" modifier="ethereum" title="$:/state/showeditpreview" revision="2" bag="default">
+<pre>no</pre>
+</div>
+<div created="20160919152407101" creator="ethereum" modified="20160919152419094" modifier="ethereum" title="$:/state/tab/moresidebar-401116514" revision="4" bag="default">
+<pre>$:/core/ui/MoreSideBar/Orphans</pre>
+</div>
+<div created="20160919152312054" creator="ethereum" modified="20160919152405352" modifier="ethereum" title="$:/state/tab/sidebar--1835078512" revision="2" bag="default">
+<pre>$:/core/ui/SideBar/More</pre>
+</div>
 <div title="$:/status/IsLoggedIn" revision="2" bag="default">
 <pre>yes</pre>
 </div>
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre>ethereum</pre>
 </div>
-<div list="Blockchain" title="$:/StoryList" revision="1" bag="default">
+<div list="" title="$:/StoryList" revision="45" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -8207,6 +8224,9 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20160919152423313" creator="ethereum" modified="20160919152424086" modifier="ethereum" title="$:/temp/search" revision="6" bag="default">
+<pre>Create</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13" revision="0" bag="default">
 <pre>{
@@ -8327,9 +8347,9 @@ Error message and password prompt
 [[Reddit Question|https://www.reddit.com/r/ethereum/comments/4c6yd0/im_confused_about_ethereum_account_format_is_it/]]
 </pre>
 </div>
-<div created="20160815111547568" creator="ethereum" modified="20160827155647225" modifier="ethereum" title="Account Creation With Java" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160815111547568" creator="ethereum" modified="20160919152513155" modifier="ethereum" title="Account Creation With Java" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>&quot;&quot;&quot;
-&lt;pre&gt;&lt;code&gt;
+`
  &lt;dependency&gt;
         &lt;groupId&gt;org.ethereum&lt;/groupId&gt;
         &lt;artifactId&gt;ethereumj-core&lt;/artifactId&gt;
@@ -8356,8 +8376,7 @@ public class CreateAccount {
         System.out.println(&quot;Private Key : &quot; + privBase16);
     }
 }
-
-&lt;/code&gt;&lt;/pre&gt;
+`
 </pre>
 </div>
 <div created="20160901201816551" creator="ethereum" modified="20160901201829479" modifier="ethereum" title="Attacker Trail" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -8755,7 +8774,7 @@ Halt Execution, Mark for deletion.
 [[Javascript API|https://github.com/ethereum/wiki/wiki/JavaScript-API]]
 </pre>
 </div>
-<div created="20160511132328672" modified="20160824102703790" title="Geth API" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160511132328672" creator="ethereum" modified="20160919152342878" modifier="ethereum" title="Geth API" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>&quot;&quot;&quot;
     eth
         sign
@@ -8896,7 +8915,7 @@ Example solc command :
 ``` solc --optimize --bin MetaCoin.sol | solc --link --libraries TestLib:&lt;address&gt;```
 </pre>
 </div>
-<div created="20160806121708854" creator="ethereum" modified="20160824104232396" modifier="ethereum" title="LLL" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160806121708854" creator="ethereum" modified="20160919152354487" modifier="ethereum" title="LLL" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>&quot;&quot;&quot;
 [[Blog|http://blog.syrinx.net/the-resurrection-of-lll-part-1/]]
 [[Old LLL Tutorial 1|https://github.com/ethereum/cpp-ethereum/wiki/LLL-Examples-for-PoC-5/04fae9e627ac84d771faddcf60098ad09230ab58]]
