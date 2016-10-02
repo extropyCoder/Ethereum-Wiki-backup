@@ -125,6 +125,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-journal</li>
 
+<li>$:/config/Plugins/Disabled/$:/plugins/tongerner/ro</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -136,6 +138,8 @@ Error message and password prompt
 <li>$:/plugins/tiddlywiki/highlight</li>
 
 <li>$:/plugins/tiddlywiki/katex</li>
+
+<li>$:/plugins/tongerner/ro</li>
 
 <li>$:/SiteSubtitle</li>
 
@@ -166,6 +170,8 @@ Error message and password prompt
 <li>Blockchain General</li>
 
 <li>Casper</li>
+
+<li>Commitment Schemes</li>
 
 <li>Compromise Consensus</li>
 
@@ -261,8 +267,6 @@ Error message and password prompt
 
 <li>Parity Mining</li>
 
-<li>Privacy</li>
-
 <li>Private Blockchains</li>
 
 <li>Project Hawk</li>
@@ -319,6 +323,12 @@ Error message and password prompt
 
 <li>Zero Cash Overview</li>
 
+<li>Zero Knowledge Proofs</li>
+
+<li>Zero Knowledge Proofs and Privacy</li>
+
+<li>ZKP Resources</li>
+
 <li>ZKPs and Token Systems and Trading</li>
 
 </ul>
@@ -339,6 +349,9 @@ Error message and password prompt
 </div>
 <div created="20160218122332897" modified="20160824102642955" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-journal" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>show</pre>
+</div>
+<div created="20160925115004881" creator="ethereum" modified="20160925115006044" modifier="ethereum" title="$:/config/Plugins/Disabled/$:/plugins/tongerner/ro" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>yes</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.13" revision="0" bag="default">
 <pre>{
@@ -8199,6 +8212,84 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div author="TonGerner" core-version="5.1.13" created="20140716185113624" creator="TonGerner" description="Read-only" list="readme help" modified="20160925110343410" modifier="TonGerner" plugin-type="plugin" source="http://tongerner.tiddlyspot.com/" title="$:/plugins/tongerner/ro" type="application/json" version="0.1.6" revision="0" bag="default">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/tongerner/ro/publish&quot;: {
+            &quot;text&quot;: &quot;\\define slider(label,text)\n&lt;$button popup=\&quot;$:/state/$label$\&quot; class=\&quot;tc-btn-invisible tgc-slider\&quot;&gt;&lt;$text text=\&quot;$label$\&quot;/&gt;&lt;/$button&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; text=\&quot;\&quot; default=\&quot;\&quot; state=\&quot;$:/state/$label$\&quot; animate=\&quot;yes\&quot;&gt;\n\n{{$text$}}\n\n&lt;/$reveal&gt;\n\\end\n\n&lt;&lt;slider \&quot;Help »\&quot; \&quot;$:/plugins/tongerner/ro/help\&quot;&gt;&gt;\n&lt;hr&gt;\n\n!!1) Buttons\nDisable in Control panel (Appearance &gt; Toolbars) the buttons you do not need in read-only mode.\n\n''//Disable at least the following buttons://''\n\n* ~ViewToolbar\n** Edit button {{$:/core/images/edit-button}}\n** More button {{$:/core/images/down-arrow}}\n** Info button {{$:/core/images/info-button}} (Tools tab contains button configuration!)\n* Page control buttons\n** New tiddler button {{$:/core/images/new-button}}\n** Control panel button {{$:/core/images/options-button}}\n** Save button {{$:/core/images/save-button}}\n** More button {{$:/core/images/down-arrow}}\n&lt;hr&gt;\n\n!!2) Sidebar tabs\nHiding tabs in the Sidebar is a 2-step procedure:&lt;br&gt;\n&amp;nbsp;&amp;nbsp;2a) Add the tag `$:/tags/hide` to tabs you want to manipulate.&lt;br&gt;\n&amp;nbsp;&amp;nbsp;2b)  Remove the tag `$:/tags/SideBar` from the tab you want to hide.\n\n!!!2a) Add tag `$:/tags/hide`\nCheck the following for adding `$:/tags/hide`\n&lt;$list filter=\&quot;[all[shadows+tiddlers]!has[draft.of]tag[$:/tags/SideBar]!tag[$:/tags/hide]sort[title]]\&quot;&gt;&lt;br&gt;\n&lt;$checkbox tag=\&quot;$:/tags/hide\&quot;&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$link&gt;\n&lt;/$checkbox&gt;\n&lt;/$list&gt;\n\nUncheck the following for removing `$:/tags/hide`\n&lt;$list filter=\&quot;[all[shadows+tiddlers]!has[draft.of]tag[$:/tags/SideBar]tag[$:/tags/hide]sort[title]]\&quot;&gt;&lt;br&gt;\n&lt;$checkbox tag=\&quot;$:/tags/hide\&quot;&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$link&gt;\n&lt;/$checkbox&gt;\n&lt;/$list&gt;\n\n!!!2b) Hide 'tabs in Sidebar'\n&lt;$list filter=\&quot;[all[shadows+tiddlers]!has[draft.of]tag[$:/tags/hide]!tag[$:/tags/SideBar]sort[title]]\&quot;&gt;&lt;br&gt;\n&lt;$checkbox tag=\&quot;$:/tags/SideBar\&quot;&gt;&amp;nbsp;&amp;nbsp;Check to show &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$link&gt;\n&lt;/$checkbox&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[all[shadows+tiddlers]!has[draft.of]tag[$:/tags/hide]tag[$:/tags/SideBar]sort[title]]\&quot;&gt;&lt;br&gt;\n&lt;$checkbox tag=\&quot;$:/tags/SideBar\&quot;&gt;&amp;nbsp;&amp;nbsp;Uncheck to hide &lt;$link to={{!!title}}&gt;&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$link&gt;\n&lt;/$checkbox&gt;\n&lt;/$list&gt;\n&lt;hr&gt;\n\n!!3) Hide Sidebar and Advanced search buttons\n&lt;&lt;&lt;\n''Note:''&lt;br&gt;Although 'invisible' the buttons stay active!\n&lt;&lt;&lt;\n\n!!!3a Sidebar button ({{$:/core/images/chevron-left}}/{{$:/core/images/chevron-right}})\n \n&lt;$list filter=\&quot;[all[shadows]!has[draft.of]tag[$:/tags/sidebar-button]!tag[$:/tags/Stylesheet]]\&quot;&gt;\n&lt;$checkbox tag=\&quot;$:/tags/Stylesheet\&quot;&gt;&amp;nbsp;&amp;nbsp;Check for 'invisible' buttons&lt;/$checkbox&gt;&lt;/$list&gt;\n&lt;$list filter=\&quot;[all[shadows]!has[draft.of]tag[$:/tags/sidebar-button]tag[$:/tags/Stylesheet]]\&quot;&gt;\n&lt;$checkbox tag=\&quot;$:/tags/Stylesheet\&quot;&gt;&amp;nbsp;&amp;nbsp;Uncheck for visible buttons&lt;/$checkbox&gt;&lt;/$list&gt;\n\n!!!3b Advanced search button {{$:/core/images/advanced-search-button}}\n\n&lt;$list filter=\&quot;[all[shadows]!has[draft.of]tag[$:/tags/advanced-search-button]!tag[$:/tags/Stylesheet]]\&quot;&gt;\n&lt;$checkbox tag=\&quot;$:/tags/Stylesheet\&quot;&gt;&amp;nbsp;&amp;nbsp;Check for 'invisible' buttons&lt;/$checkbox&gt;&lt;/$list&gt;\n&lt;$list filter=\&quot;[all[shadows]!has[draft.of]tag[$:/tags/advanced-search-button]tag[$:/tags/Stylesheet]]\&quot;&gt;\n&lt;$checkbox tag=\&quot;$:/tags/Stylesheet\&quot;&gt;&amp;nbsp;&amp;nbsp;Uncheck for visible buttons&lt;/$checkbox&gt;&lt;/$list&gt;\n\n&lt;hr&gt;\n\n!!4) Save (locally or to a server)\n''{{$:/language/Buttons/SaveWiki/Hint}}'' {{$:/plugins/tongerner/ro/save-button}}\n\n{{$:/core/ui/ControlPanel/Saving}}\n&quot;,
+            &quot;caption&quot;: &quot;Publish&quot;,
+            &quot;created&quot;: &quot;20140715185723459&quot;,
+            &quot;creator&quot;: &quot;TonGerner&quot;,
+            &quot;modified&quot;: &quot;20160805184204165&quot;,
+            &quot;modifier&quot;: &quot;TonGerner&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Appearance&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tongerner/ro/publish&quot;
+        },
+        &quot;$:/plugins/tongerner/ro/image-save-button&quot;: {
+            &quot;created&quot;: &quot;20140715185836189&quot;,
+            &quot;text&quot;: &quot;&lt;svg class=\&quot;tgc-image-save-button tc-image-button\&quot; viewBox=\&quot;0 0 128 128\&quot; width=\&quot;22pt\&quot; height=\&quot;22pt\&quot;&gt;\n    &lt;g fill-rule=\&quot;evenodd\&quot;&gt;\n        &lt;path d=\&quot;M120.78304,34.329058 C125.424287,43.1924006 128.049406,53.2778608 128.049406,63.9764502 C128.049406,99.3226742 99.3956295,127.97645 64.0494055,127.97645 C28.7031816,127.97645 0.0494055385,99.3226742 0.0494055385,63.9764502 C0.0494055385,28.6302262 28.7031816,-0.0235498012 64.0494055,-0.0235498012 C82.8568763,-0.0235498012 99.769563,8.08898558 111.479045,21.0056358 L114.159581,18.3250998 C117.289194,15.1954866 122.356036,15.1939641 125.480231,18.3181584 C128.598068,21.4359957 128.601317,26.5107804 125.473289,29.6388083 L120.78304,34.329058 Z M108.72451,46.3875877 C110.870571,51.8341374 112.049406,57.767628 112.049406,63.9764502 C112.049406,90.4861182 90.5590735,111.97645 64.0494055,111.97645 C37.5397375,111.97645 16.0494055,90.4861182 16.0494055,63.9764502 C16.0494055,37.4667822 37.5397375,15.9764502 64.0494055,15.9764502 C78.438886,15.9764502 91.3495036,22.308215 100.147097,32.3375836 L58.9411255,73.5435552 L41.975581,56.5780107 C38.8486152,53.4510448 33.7746915,53.4551552 30.6568542,56.5729924 C27.5326599,59.6971868 27.5372202,64.7670668 30.6618725,67.8917192 L53.279253,90.5090997 C54.8435723,92.073419 56.8951519,92.8541315 58.9380216,92.8558261 C60.987971,92.8559239 63.0389578,92.0731398 64.6049211,90.5071765 L108.72451,46.3875877 Z\&quot;&gt;&lt;/path&gt;\n    &lt;/g&gt;\n&lt;/svg&gt;&quot;,
+            &quot;creator&quot;: &quot;TonGerner&quot;,
+            &quot;modified&quot;: &quot;20160407160605840&quot;,
+            &quot;modifier&quot;: &quot;TonGerner&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tongerner/ro/image-save-button&quot;
+        },
+        &quot;$:/plugins/tongerner/ro/readme&quot;: {
+            &quot;text&quot;: &quot;A plugin to make ~TiddlyWiki read-only.\n\nYou can hide (at a minimum):\n\n* ~ViewToolbar\n** Edit button\n* Page control buttons\n** New tiddler button\n** Control panel button\n** Save button.\n\nBut you can hide as well:\n\n* ''all'' other buttons\n** 'Sidebar' button (to switch Sidebar) and 'Advanced search' button (next to Search) included\n* ''all'' Sidebar tabs, even user added tabs.\n\nOpen [[$:/plugins/tongerner/ro/publish]] and follow the 4 steps.\n\n&lt;&lt;&lt;\n''Note:''\n\n* Although you can hide the 'Sidebar' and 'Advanced Search' button, they remain 'active'.\n* Search in ''~AdvancedSearch'', tab ''Shadows'' for ''~ControlPanel'' to have access to:\n** ''$:/ControlPanel &gt; Appearance &gt; Toolbars'' to unhide buttons\n** ''$:/ControlPanel &gt; Appearance &gt; Publish'' to recover tabs, unhide buttons, ...\n&lt;&lt;&lt;\n\n       &quot;,
+            &quot;created&quot;: &quot;20140821172500339&quot;,
+            &quot;creator&quot;: &quot;TonGerner&quot;,
+            &quot;modified&quot;: &quot;20160805193704745&quot;,
+            &quot;modifier&quot;: &quot;TonGerner&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tongerner/ro/readme&quot;
+        },
+        &quot;$:/plugins/tongerner/ro/icon&quot;: {
+            &quot;text&quot;: &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot; standalone=\&quot;no\&quot;?&gt;\n&lt;svg\n   xmlns:dc=\&quot;http://purl.org/dc/elements/1.1/\&quot;\n   xmlns:cc=\&quot;http://creativecommons.org/ns#\&quot;\n   xmlns:rdf=\&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#\&quot;\n   xmlns:svg=\&quot;http://www.w3.org/2000/svg\&quot;\n   xmlns=\&quot;http://www.w3.org/2000/svg\&quot;\n   version=\&quot;1.1\&quot;\n   id=\&quot;svg2\&quot;\n   viewBox=\&quot;0 0 99.212598 99.212598\&quot;\n   height=\&quot;28mm\&quot;\n   width=\&quot;28mm\&quot;&gt;\n  &lt;defs\n     id=\&quot;defs4\&quot; /&gt;\n  &lt;metadata\n     id=\&quot;metadata7\&quot;&gt;\n    &lt;rdf:RDF&gt;\n      &lt;cc:Work\n         rdf:about=\&quot;\&quot;&gt;\n        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;\n        &lt;dc:type\n           rdf:resource=\&quot;http://purl.org/dc/dcmitype/StillImage\&quot; /&gt;\n        &lt;dc:title&gt;&lt;/dc:title&gt;\n      &lt;/cc:Work&gt;\n    &lt;/rdf:RDF&gt;\n  &lt;/metadata&gt;\n  &lt;g\n     transform=\&quot;translate(0,-953.14961)\&quot;\n     id=\&quot;layer1\&quot;&gt;\n    &lt;path\n       d=\&quot;m 48.98237,1051.0187 -41.9831281,-24.239 -1.3e-6,-48.47796 41.9831264,-24.23897 41.983128,24.23897 10e-7,48.47796 z\&quot;\n       id=\&quot;path4142\&quot;\n       style=\&quot;fill:#a0a0ff;fill-opacity:1;stroke:#a0a0ff;stroke-width:1.22180152;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1\&quot; /&gt;\n    &lt;g\n       transform=\&quot;matrix(2.9000748,0,0,2.9000748,17.560041,968.58207)\&quot;\n       id=\&quot;g4657\&quot;&gt;\n      &lt;path\n         style=\&quot;fill:#000000\&quot;\n         d=\&quot;M 2.40166,14.83744 7.12649,19.54717 17.92611,8.78207 13.20128,4.07234 2.40166,14.83744 Z M 15.92148,1.36083 13.92784,3.3481 18.65193,8.05709 20.64557,6.06982 c 0.6766,-0.67444 -10e-6,-1.34889 -10e-6,-1.34889 l -3.37088,-3.3601 c 0,0 -0.6766,-0.67444 -1.3532,0 z M 1.73737,15.4772 l -0.99229,5.72125 5.7273,-1.00138 -4.735,-4.71987 -10e-6,0 z\&quot;\n         id=\&quot;editor_pencil_pen_edit_write_glyph\&quot;\n         stroke=\&quot;null\&quot; /&gt;\n      &lt;rect\n         style=\&quot;stroke-dasharray:none\&quot;\n         stroke-width=\&quot;null\&quot;\n         stroke-linejoin=\&quot;null\&quot;\n         stroke-linecap=\&quot;null\&quot;\n         x=\&quot;-2.03667\&quot;\n         y=\&quot;9.8352404\&quot;\n         width=\&quot;26.11743\&quot;\n         height=\&quot;2.1031499\&quot;\n         id=\&quot;svg_1\&quot;\n         transform=\&quot;matrix(0.69825835,0.71584585,-0.71584585,0.69825835,11.119094,-4.6050809)\&quot; /&gt;\n    &lt;/g&gt;\n  &lt;/g&gt;\n&lt;/svg&gt;\n&quot;,
+            &quot;created&quot;: &quot;20160109173149427&quot;,
+            &quot;modified&quot;: &quot;20160109173152431&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tongerner/ro/icon&quot;,
+            &quot;type&quot;: &quot;image/svg+xml&quot;
+        },
+        &quot;$:/plugins/tongerner/ro/advanced-search-button&quot;: {
+            &quot;created&quot;: &quot;20150519114003182&quot;,
+            &quot;text&quot;: &quot;/* Hide advanced search button */\n.tc-image-advanced-search-button.tc-image-button {\n     padding-left: 15px;\n}&quot;,
+            &quot;creator&quot;: &quot;TonGerner&quot;,
+            &quot;modified&quot;: &quot;20160407161310865&quot;,
+            &quot;modifier&quot;: &quot;TonGerner&quot;,
+            &quot;tags&quot;: &quot;$:/tags/advanced-search-button&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tongerner/ro/advanced-search-button&quot;,
+            &quot;type&quot;: &quot;text/css&quot;
+        },
+        &quot;$:/plugins/tongerner/ro/help&quot;: {
+            &quot;created&quot;: &quot;20140716184603499&quot;,
+            &quot;creator&quot;: &quot;TonGerner&quot;,
+            &quot;text&quot;: &quot;@@background-color: #f6faff;\n\n&lt;div&gt;\n\nBefore you 'publish' your ~TiddlyWiki:\n\n# Make a backup of your wiki.\n# Get a defined start-up situation for your TW:\n#* Define your starting tiddler(s) in [[$:/DefaultTiddlers]].\n#* In Controlpanel (tabs 'Advanced' &gt; 'Settings') switch of the 'Navigation Address Bar' ('Do not update the address bar') and the 'Navigation History' ('Do not update history').\n# Follow the 4 steps in [[$:/plugins/tongerner/ro/publish]].\n\n&lt;/div&gt;\n\n@@\n&quot;,
+            &quot;modified&quot;: &quot;20150519132632681&quot;,
+            &quot;modifier&quot;: &quot;TonGerner&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tongerner/ro/help&quot;
+        },
+        &quot;$:/plugins/tongerner/ro/sidebar-button&quot;: {
+            &quot;text&quot;: &quot;/* Hide sidebar button */\nsvg.tc-image-chevron-left {\n     display: none;\n}\n\nsvg.tc-image-chevron-right {\n     display: none;\n}\n&quot;,
+            &quot;created&quot;: &quot;20140715185800387&quot;,
+            &quot;creator&quot;: &quot;TonGerner&quot;,
+            &quot;modified&quot;: &quot;20160109181335439&quot;,
+            &quot;modifier&quot;: &quot;TonGerner&quot;,
+            &quot;tags&quot;: &quot;$:/tags/sidebar-button&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tongerner/ro/sidebar-button&quot;,
+            &quot;type&quot;: &quot;text/css&quot;
+        },
+        &quot;$:/plugins/tongerner/ro/save-button&quot;: {
+            &quot;text&quot;: &quot;&lt;$button message=\&quot;tm-save-wiki\&quot; param={{$:/config/SaveWikiButton/Template}} tooltip={{$:/language/Buttons/SaveWiki/Hint}} aria-label={{$:/language/Buttons/SaveWiki/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;span class=\&quot;tc-dirty-indicator\&quot;&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/plugins/tongerner/ro/image-save-button}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/language/Buttons/SaveWiki/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/span&gt;\n&lt;/$button&gt;&quot;,
+            &quot;caption&quot;: &quot;{{$:/core/images/save-button}} {{$:/language/Buttons/SaveWiki/Caption}}&quot;,
+            &quot;created&quot;: &quot;20160115104029832&quot;,
+            &quot;creator&quot;: &quot;TonGerner&quot;,
+            &quot;description&quot;: &quot;{{$:/language/Buttons/SaveWiki/Hint}}&quot;,
+            &quot;modified&quot;: &quot;20160115104508144&quot;,
+            &quot;modifier&quot;: &quot;TonGerner&quot;,
+            &quot;tags&quot;: &quot;&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tongerner/ro/save-button&quot;
+        }
+    }
+}</pre>
+</div>
 <div created="20160209081626695" modified="20160824102643088" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -8211,7 +8302,7 @@ Error message and password prompt
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre>ethereum</pre>
 </div>
-<div list="Blockchain [[Blockchain General]]" title="$:/StoryList" revision="2" bag="default">
+<div list="Blockchain" title="$:/StoryList" revision="7" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -8382,7 +8473,7 @@ public class CreateAccount {
 <div created="20160901201816551" creator="ethereum" modified="20160901201829479" modifier="ethereum" title="Attacker Trail" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[Initial Account|http://gastracker.io/addr/0x10abb5efecdc09581f8b7cb95791fe2936790b4e]]</pre>
 </div>
-<div created="20160502133536633" creator="ethereum" modified="20160921115421202" modifier="ethereum" tags="" title="Blockchain" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160502133536633" creator="ethereum" modified="20160930090419454" modifier="ethereum" tags="" title="Blockchain" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&quot;&quot;&quot;
 [[Blockchain General]]
 [[Ethereum]]
@@ -8392,12 +8483,12 @@ public class CreateAccount {
 [[Corda]]
 [[Scorex]]
 [[Factom]]
-[[Privacy]]
+[[Zero Knowledge Proofs and Privacy]]
 [[Ripple]]
 [[News and Exchanges]]
 </pre>
 </div>
-<div created="20160502133555093" creator="ethereum" modified="20160921115112986" modifier="ethereum" tags="" title="Blockchain General" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160502133555093" creator="ethereum" modified="20160925114825174" modifier="ethereum" tags="" title="Blockchain General" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&quot;&quot;&quot;
 [[How the blockchain works|http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works/]]
 [[Khan Academy|https://www.khanacademy.org/economics-finance-domain/core-finance/money-and-banking/bitcoin/v/bitcoin-transaction-block-chains]]
@@ -8411,12 +8502,18 @@ public class CreateAccount {
 [[IC3 Initiative|http://www.initc3.org/]]
 [[Obfuscation]]
 [[Private Blockchains]]
+
 &quot;&quot;&quot;</pre>
 </div>
 <div created="20160821191551171" creator="ethereum" modified="20160824124541258" modifier="ethereum" title="Casper" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&quot;&quot;&quot;
 [[Casper|https://blog.ethereum.org/2015/12/28/understanding-serenity-part-2-casper/]]
 </pre>
+</div>
+<div created="20160928114120368" creator="ethereum" modified="20160928114208604" modifier="ethereum" tags="" title="Commitment Schemes" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!!Commitment Schemes
+
+[[Wiki page|https://en.wikipedia.org/wiki/Commitment_scheme]]</pre>
 </div>
 <div created="20160815070007452" modified="20160824102654154" title="Compromise Consensus" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>A blockchain, where instead of exact consensus of state required for verification, a vote can be taken, a bit like a single transferable vote, and a compromise position reached. </pre>
@@ -9390,15 +9487,6 @@ sudo add-apt-repository ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt-get install ethminer</pre>
 </div>
-<div created="20160921115425994" creator="ethereum" modified="20160921150715591" modifier="ethereum" title="Privacy" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[Zero Cash]]
-
-[[BabyZoe Slides|https://github.com/zcash/babyzoe/blob/master/talks/2016-07-27-IC3---SNARKs-for-Ethereum.pdf]]
-
-[[Project Hawk]]
-
-[[Drawbacks|https://eprint.iacr.org/2016/358.pdf]]</pre>
-</div>
 <div created="20160921115118078" creator="ethereum" modified="20160921115156513" modifier="ethereum" title="Private Blockchains" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!!Types of Blockchains
 
@@ -9859,14 +9947,14 @@ $$(\sigma,g,s,l,r,o) \equiv$$ Ξ $$(\sigma,g,l)$$
 
 </pre>
 </div>
-<div created="20160807205040503" creator="ethereum" modified="20160921121921493" modifier="ethereum" title="Zero Cash" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160807205040503" creator="ethereum" modified="20160928111821493" modifier="ethereum" title="Zero Cash" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&quot;&quot;&quot;
-[[ZKPs and Token Systems and Trading]]
 [[Zero Cash Overview]]
 [[Zero Cash Site|https://z.cash/]]
 [[Coindesk article|http://www.coindesk.com/zcash-delays-genesis-block-cryptocurrency-audites/]]
 [[Mining in EC2 guide|https://github.com/Austin-Williams/zcash-guides/wiki/Guide-to-Mining-Zcash-on-Amazon-EC2]]
 [[Solo Mining|https://github.com/Austin-Williams/zcash-guides/wiki/Guide-to-Solo-Mining-Zcash]]
+[[ZeroCash Protocol|https://github.com/zcash/zips/blob/master/protocol/protocol.pdf]]
 &quot;&quot;&quot;</pre>
 </div>
 <div created="20160921084321630" creator="ethereum" modified="20160921092008130" modifier="ethereum" title="Zero Cash Overview" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -9896,10 +9984,47 @@ A pour transaction allows a user to make a private payment, by consuming some nu
 
 </pre>
 </div>
-<div created="20160921091950327" creator="ethereum" modified="20160921121820799" modifier="ethereum" title="ZKPs and Token Systems and Trading" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160928110314218" creator="ethereum" modified="20161002054539337" modifier="ethereum" tags="" title="Zero Knowledge Proofs" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>[[Zero Knowledge Proofs A Primer|https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/ ]]
 
-!! ZKPs and Token Systems
+[[Another Primer|https://jeremykun.com/2016/09/19/zero-knowledge-definitions-and-theory]]
+
+[[Informal Intro to ZKPs|http://people.seas.harvard.edu/~salil/research/complexityZK.pdf]]
+
+[[ZKPs and Token Systems and Trading]]
+
+[[ZKP Resources]]
+
+[[Snarks for C|https://eprint.iacr.org/2013/507.pdf]]
+
+[[Commitment Schemes]]</pre>
+</div>
+<div created="20160921115425994" creator="ethereum" modified="20160930111526467" modifier="ethereum" title="Zero Knowledge Proofs and Privacy" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[Zero Knowledge Proofs]]
+
+[[Zero Cash]]
+
+[[BabyZoe Slides|https://github.com/zcash/babyzoe/blob/master/talks/2016-07-27-IC3---SNARKs-for-Ethereum.pdf]]
+
+[[Project Hawk]]
+
+[[Drawbacks|https://eprint.iacr.org/2016/358.pdf]]
+
+[[Zero Knowledge contingent payments|https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/]]</pre>
+</div>
+<div created="20160928110458561" creator="ethereum" modified="20160930100647623" modifier="ethereum" title="ZKP Resources" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!!Zero Knowledge Proof Resources
+
+!!!Books
+Cryptography Theory and Practice - Douglas Stinson
+
+!!Lecture Notes
+[[Lecture Notes|https://www.cs.princeton.edu/courses/archive/fall07/cos433/lec15.pdf]]
+
+[[Presentation|www.cs.sjsu.edu/~stamp/CS265/projects/Spr04/section2/.../Rajagopalan.ppt]]</pre>
+</div>
+<div created="20160921091950327" creator="ethereum" modified="20160928110419638" modifier="ethereum" title="ZKPs and Token Systems and Trading" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! ZKPs and Token Systems
  In order to have a functioning digital token system, you do not strictly need to have visible accounts and balances; in fact, all that you need is a way to solve the “double spending” problem – if you have 100 units of an asset, you should be able to spend those 100 units once, but not twice. With zero-knowledge proofs, we can of course do this; the claim that you would zero-knowledge-prove is something like “I know a secret number behind one of the accounts in this set of accounts that have been created, and it does not match any of the secret numbers that have already been revealed”
 
 !!!Trading
