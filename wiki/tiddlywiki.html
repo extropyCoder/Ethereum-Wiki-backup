@@ -153,6 +153,8 @@ Error message and password prompt
 
 <li>$:/temp/info-plugin</li>
 
+<li>$:/temp/search</li>
+
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
@@ -172,6 +174,10 @@ Error message and password prompt
 <li>BitMessage</li>
 
 <li>Blockchain</li>
+
+<li>Blockchain Art</li>
+
+<li>Blockchain Economics</li>
 
 <li>Blockchain General</li>
 
@@ -248,6 +254,8 @@ Error message and password prompt
 <li>Factom</li>
 
 <li>Formal Methods</li>
+
+<li>General News</li>
 
 <li>Geth</li>
 
@@ -8320,7 +8328,7 @@ Error message and password prompt
 <div title="$:/status/UserName" revision="1" bag="default">
 <pre>ethereum</pre>
 </div>
-<div list="Blockchain" title="$:/StoryList" revision="15" bag="default">
+<div list="Blockchain" title="$:/StoryList" revision="37" bag="default">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json" revision="0" bag="default">
@@ -8336,6 +8344,9 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20161021184615627" creator="ethereum" modified="20161021184618460" modifier="ethereum" title="$:/temp/search" revision="6" bag="default">
+<pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13" revision="0" bag="default">
 <pre>{
@@ -8496,15 +8507,19 @@ public class CreateAccount {
 
 [[GitHub|https://github.com/bigchaindb/bigchaindb]]</pre>
 </div>
-<div created="20161015130615160" creator="ethereum" modified="20161015130907247" modifier="ethereum" title="Bitcoin" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20161015130615160" creator="ethereum" modified="20161021185043732" modifier="ethereum" title="Bitcoin" type="text/vnd.tiddlywiki" revision="2" bag="default">
 <pre>[[Bitcoin Wikipedia|https://en.wikipedia.org/wiki/Bitcoin]]
 
-[[Coindesk Beginner's Guide|http://www.coindesk.com/information/]]</pre>
+[[Coindesk Beginner's Guide|http://www.coindesk.com/information/]]
+
+[[How a transaction works|https://imgur.com/fZyX3Od]]
+
+[[Bitcoin History|https://imgur.com/kVF3kFu]]</pre>
 </div>
-<div created="20161015184835501" creator="ethereum" modified="20161015184848831" modifier="ethereum" title="BitMessage" revision="1" bag="default">
+<div created="20161015184835501" creator="ethereum" modified="20161015184850147" modifier="ethereum" title="BitMessage" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[BitMessage Wikipedia|https://en.wikipedia.org/wiki/Bitmessage]]</pre>
 </div>
-<div created="20160502133536633" creator="ethereum" modified="20161015184825898" modifier="ethereum" tags="" title="Blockchain" type="text/vnd.tiddlywiki" revision="1" bag="default">
+<div created="20160502133536633" creator="ethereum" modified="20161021185707312" modifier="ethereum" tags="" title="Blockchain" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>&quot;&quot;&quot;
 [[Blockchain General]]
 [[Ethereum]]
@@ -8519,10 +8534,26 @@ public class CreateAccount {
 [[Zero Knowledge Proofs and Privacy]]
 [[Ripple]]
 [[BitMessage]]
+[[Blockchain Art]]
 [[News and Exchanges]]
 </pre>
 </div>
-<div created="20160502133555093" creator="ethereum" modified="20161015124510530" modifier="ethereum" tags="" title="Blockchain General" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20161021185822476" creator="ethereum" modified="20161021185955204" modifier="ethereum" title="Blockchain Art" revision="1" bag="default">
+<pre>&quot;&quot;&quot;
+[[Artlery|https://artlery.com]]
+[[Ascribe|https://www.ascribe.io]]
+[[Blockai|https://blockai.com]]
+[[Everledger|http://www.everledger.io]]
+[[MediaChain Labs|http://www.mediachainlabs.com]]
+[[Tagsmart|http://www.tagsmart.com]]
+[[Monegraph|https://monegraph.com]]
+[[Verisart|https://www.verisart.com]]
+[[Bitmark|https://bitmark.com]]</pre>
+</div>
+<div created="20161021184734109" creator="ethereum" modified="20161021184814352" modifier="ethereum" title="Blockchain Economics" revision="1" bag="default">
+<pre>[[Vienna University Paper|http://nakamotoinstitute.org/static/docs/economics-of-bitcoin.pdf]]</pre>
+</div>
+<div created="20160502133555093" creator="ethereum" modified="20161021185359385" modifier="ethereum" tags="" title="Blockchain General" type="text/vnd.tiddlywiki" revision="3" bag="default">
 <pre>&quot;&quot;&quot;
 [[How the blockchain works|http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works/]]
 [[Khan Academy|https://www.khanacademy.org/economics-finance-domain/core-finance/money-and-banking/bitcoin/v/bitcoin-transaction-block-chains]]
@@ -8537,7 +8568,11 @@ public class CreateAccount {
 [[Obfuscation]]
 [[Private Blockchains]]
 [[Blockchain Use cases]]
-&quot;&quot;&quot;</pre>
+[[Blockchain Economics]]
+[[UK Gov Report|https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/492972/gs-16-1-distributed-ledger-technology.pdf]]
+[[Andreas Antonopolous YouTube Channel|https://www.youtube.com/user/aantonop]]
+[[Stanford Online Course|https://crypto.stanford.edu/cs251/]]
+</pre>
 </div>
 <div created="20161015124517982" creator="ethereum" modified="20161015124529735" modifier="ethereum" title="Blockchain Use cases" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[Consensys Article|https://media.consensys.net/2016/10/13/5-blockchain-iot-applications]]</pre>
@@ -8561,17 +8596,25 @@ public class CreateAccount {
 [[Paxos protocol|https://en.wikipedia.org/wiki/Paxos_(computer_science)]]
 [[Incentives in Consensus Computer|https://eprint.iacr.org/2015/702.pdf]]</pre>
 </div>
-<div created="20160520200045933" creator="ethereum" modified="20160921171028342" modifier="ethereum" title="Consensus Protocols" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&quot;&quot;&quot;
-[[Slides|http://www.slideshare.net/lablogga/blockchain-consensus-protocols]]
+<div created="20160520200045933" creator="ethereum" modified="20161017131325773" modifier="ethereum" title="Consensus Protocols" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[Slides|http://www.slideshare.net/lablogga/blockchain-consensus-protocols]]
+
 [[Mining Overview|http://www.righto.com/2014/02/bitcoin-mining-hard-way-algorithms.html]]
+
 [[Proof of Work]]
+
 [[Proof of Stake]]
+
 [[Proof of Activity]]
+
 Bitcoin has a 'trust no one logic' , Ripple lets you choose a set of nodes to trust
+
 [[Ghost - The Greedy Heaviest-Observed Sub-Tree|http://www.cs.huji.ac.il/~avivz/pubs/13/btc_scalability_full.pdf]]
+
 [[Block Protocol|https://github.com/ethereum/wiki/wiki/Block-Protocol-2.0]]
+
 [[Proof of Space|https://eprint.iacr.org/2015/528.pdf]]
+
 [[Compromise Consensus]]
 
 !!!Hyperledger overview of types
@@ -8669,7 +8712,7 @@ Orbit. A distributed peer to peer app on IPFS - https://github.com/haadcode
 Building scalable React Dapp architecture - https://github.com/SilentCicero/react-dapp-boilerplate
 </pre>
 </div>
-<div created="20160209081655076" creator="ethereum" modified="20161015101555202" modifier="ethereum" tags="" title="Ethereum" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160209081655076" creator="ethereum" modified="20161021185309030" modifier="ethereum" tags="" title="Ethereum" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>&quot;&quot;&quot;
 [[Ethereum Design]]
 [[Ethereum Classic]]
@@ -8691,6 +8734,7 @@ Building scalable React Dapp architecture - https://github.com/SilentCicero/reac
 [[Raspberry Pi and Ethereum]]
 [[Ethereum Gitter]]
 [[Ethereum Use Cases]]
+[[EtherCasts|https://www.youtube.com/user/EtherCasts]]
 </pre>
 </div>
 <div created="20160824204355155" creator="ethereum" modified="20160824204413278" modifier="ethereum" title="Ethereum Accounts" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -8733,15 +8777,16 @@ Every block header in Ethereum contains not just one Merkle tree, but three tree
 <pre>[[Research|https://gitter.im/ethereum/research]]
 [[EIP|https://gitter.im/ethereum/EIPs]]</pre>
 </div>
-<div created="20160220110450529" creator="ethereum" modified="20160825213300297" modifier="ethereum" tags="" title="Ethereum Resources" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160220110450529" creator="ethereum" modified="20161021185549615" modifier="ethereum" tags="" title="Ethereum Resources" type="text/vnd.tiddlywiki" revision="1" bag="default">
 <pre>&quot;&quot;&quot;
 [[Ethereum Blog|https://blog.ethereum.org/]]
 [[Ethereum Wiki|https://github.com/ethereum/wiki/blob/master/Home.md]]
 [[Stack Exchange|http://ethereum.stackexchange.com/]]
 [[Romans Notes|http://blog.rplasil.name/2015/05/building-ethereum-app-pt-i.html]]
-[[Gov Paper|https://www.gov.uk/government/news/distributed-ledger-technology-beyond-block-chain]]
 [[Ethernodes|https://www.ethernodes.org/network/1]]
 [[Etherstats|https://ethstats.net/]]
+[[Etherscan|https://etherscan.io/]]
+[[Etherchain|https://etherchain.org/]]
 [[Google Big Query|https://bigquery.cloud.google.com/table/etherquery:ethereum.blocks]]
 [[Makoto's Slides|https://docs.google.com/presentation/d/16KBFTskiBovLY2NL_JCPNEWObQ8iPxbB181mc0_WaKU/edit#slide=id.g12fcf045df_0_77]]
 [[Ethereum JS Community|https://github.com/ethereumjs]]
@@ -9000,6 +9045,14 @@ Halt Execution, Mark for deletion.
 [[Z3 Prover|https://github.com/Z3Prover/z3/]]
 </pre>
 </div>
+<div created="20161016145134198" creator="ethereum" modified="20161016151558401" modifier="ethereum" title="General News" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&quot;&quot;&quot;
+[[Russian Gov Doc Storage|http://www.coindesk.com/the-russian-government-is-testing-blockchain-for-document-storage/]]
+[[UN looking at blockchain for sustainability solutions|http://www.coindesk.com/united-nations-blockchain-sustainability-solutions/]] 
+[[Funderbeam Startup stock exchange|http://www.coindesk.com/united-nations-blockchain-sustainability-solutions/]]
+[[Healthcare sceptical|http://www.coindesk.com/blockchain-healthcare-conference-skepticism-promise/]]
+[[IBM invests $200M in IOT &amp; Blockchain|http://www.coindesk.com/ibm-blockchain-iot-office/]]</pre>
+</div>
 <div created="20160727065133193" creator="ethereum" modified="20160824124703294" modifier="ethereum" title="Geth" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&quot;&quot;&quot;
 [[Geth useful]]
@@ -9191,13 +9244,14 @@ But very inefficient
 
 </pre>
 </div>
-<div created="20160902050508179" creator="ethereum" modified="20161015131004369" modifier="ethereum" title="News and Exchanges" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160902050508179" creator="ethereum" modified="20161016145125250" modifier="ethereum" title="News and Exchanges" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&quot;&quot;&quot;
 [[Coindesk State of the Bockchain 2016|http://www.coindesk.com/state-of-blockchain-q1-2016/]]
 [[Reddit ETC|https://www.reddit.com/r/EthereumClassic/]]
 [[Ether Live|http://ethnews.com/etherlive]]
 [[JP Morgan  / Quorum|http://futurism.com/say-hello-to-quorum-j-p-morgans-private-blockchain-network/]]
-[[Devcon2]]</pre>
+[[Devcon2]]
+[[General News]]</pre>
 </div>
 <div created="20160921090925299" creator="ethereum" modified="20160921092210985" modifier="ethereum" title="Obfuscation" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[Impossibility|https://www.iacr.org/archive/crypto2001/21390001.pdf]]
@@ -9636,9 +9690,9 @@ Note that this process can be regarded as picking a pseudorandom stakeholder in 
 
 </pre>
 </div>
-<div created="20160520200148299" creator="ethereum" modified="20160824125830879" modifier="ethereum" title="Proof of Stake" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20160520200148299" creator="ethereum" modified="20161018140222680" modifier="ethereum" title="Proof of Stake" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&quot;&quot;&quot;
-[[Vitalik Blig 1|https://blog.ethereum.org/2014/07/05/stake/]]
+[[Vitalik Blog 1|https://blog.ethereum.org/2014/07/05/stake/]]
 [[Vitalik Blog 2|https://blog.ethereum.org/2014/10/03/slasher-ghost-developments-proof-stake/]]
 [[Vitalik Blog 3|https://blog.ethereum.org/2014/11/25/proof-stake-learned-love-weak-subjectivity/]]
 [[Slasher POS]]
